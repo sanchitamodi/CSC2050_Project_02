@@ -36,10 +36,7 @@ int main(int argc, char *argv[]){
 	//accept 0 or 1 command line argument
 	if(argc == 1){
 		//if no file specified, read from stdin
-		FILE *fp = stdin;
-		count(fp);
-
-		fclose(fp);
+		count(stdin);
 		return 0;
 		//or count(stdin) since stdin is already a file pointer		
 
