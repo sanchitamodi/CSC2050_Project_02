@@ -8,7 +8,6 @@ void uniq(FILE *fp){
 	char *prev_line = NULL;
 	ssize_t bytes_read = 0;
 	size_t curr_size = 0;
-	size_t prev_size = 0;
 	
 	//read first line of input
 	bytes_read = getline(&curr_line, &curr_size, fp);
@@ -18,7 +17,6 @@ void uniq(FILE *fp){
 	
 		//move curr_line to prev_line
 		prev_line = curr_line;
-		prev_size = curr_size;
 		//reset curr so the next invocation of getline can overwite it
 		curr_line = NULL;
 		curr_size = 0;
@@ -33,7 +31,6 @@ void uniq(FILE *fp){
         
 		free(prev_line);//free it of the previous value
 		prev_line = curr_line; //immediately update with new value
-		prev_size = curr_size;
 
 		curr_line = NULL;
 		curr_size = 0;
@@ -58,7 +55,7 @@ int main(int argc, char *argv[]){
                 //check if file opened successfully
                 if(fp == NULL){
                         printf("ERROR: file could not be opened");
-                        return 0;
+                        return 1;
                 }
                 
 		uniq(fp);

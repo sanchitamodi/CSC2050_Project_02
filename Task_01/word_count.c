@@ -48,7 +48,7 @@ int main(int argc, char *argv[]){
         
                 //check if file opened successfully
                 if(fp == NULL){
-                        printf("ERROR: file could not be opened");
+                        printf("ERROR: file could not be opened\n");
                         return 1;
                 }
 
@@ -59,7 +59,7 @@ int main(int argc, char *argv[]){
 	
 	}	
 	else{//accept exatly 1 or no command line arguments
-		printf("ERROR: cannot contain more than 2 command line arguments");
+		printf("ERROR: cannot contain more than 2 command line arguments\n");
 		return 1;
 	}
 	
