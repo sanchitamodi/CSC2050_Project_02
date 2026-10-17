@@ -48,7 +48,7 @@ int main(int argc, char *argv[]){
         
                 //check if file opened successfully
                 if(fp == NULL){
-                        printf("ERROR: file could not be opened\n");
+                        perror("ERROR: file could not be opened\n");
                         return 1;
                 }
 

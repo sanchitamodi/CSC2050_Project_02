@@ -54,7 +54,7 @@ int main(int argc, char *argv[]){
                 FILE *fp = fopen(argv[1], "r");
                 //check if file opened successfully
                 if(fp == NULL){
-                        printf("ERROR: file could not be opened");
+                        perror("ERROR: file could not be opened");
                         return 1;
                 }
                 
