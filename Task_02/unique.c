@@ -68,6 +68,7 @@ int main(int argc, char *argv[]){
         }
         else{//accept exatly 1 or no command line arguments
                 printf("ERROR: cannot contain more than 2 command line arguments");
-        }
+		return 1;
+	}
 }
 
